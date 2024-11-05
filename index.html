@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>20241024</title>
+    <title>22100674</title>
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -22,7 +22,7 @@
     <div id="div_students"></div>
 </div>
 
-<!-- Create / Update Modal -->
+
 <div class="modal fade" id="dataModal" tabindex="-1" role="dialog" aria-labelledby="dataModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -49,7 +49,7 @@
 
     function getDataFromJSONFile(){
         const xhr = new XMLHttpRequest(); 
-        xhr.open("GET", "https://672a33bd976a834dd0228aa9.mockapi.io/api/v1/students"); 
+        xhr.open("GET", "https://672a33bd976a834dd0228aa9.mockapi.io/api/vi/students"); 
         xhr.setRequestHeader("content-type", "application/json");
         xhr.send();
         xhr.onload = () => { 
@@ -67,7 +67,7 @@
         $('#dataModalLabel').text('Create Data');
         $('#modal_student_name').val('');
         $('#modal_student_age').val('');
-        $('#modal_student_id').hide(); // Hide ID input for creation
+        $('#modal_student_id').hide(); 
         $('#modalSaveBtn').off('click').on('click', createDataToJSONFile);
         $('#dataModal').modal('show');
     }
@@ -76,7 +76,7 @@
         $('#dataModalLabel').text('Update Data');
         $('#modal_student_name').val('');
         $('#modal_student_age').val('');
-        $('#modal_student_id').val($('#student_id').val()).show(); // Show ID input for update
+        $('#modal_student_id').val($('#student_id').val()).show();
         $('#modalSaveBtn').off('click').on('click', updateDataToJSONFile);
         $('#dataModal').modal('show');
     }
